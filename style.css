@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* HEADER */
+.header {
+    background: #fff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.logo img {
+    height: 65px;
+    display: block;
+    object-fit: contain;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    margin-left: 28px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 6px 0;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ff8c00;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff8c00;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    padding-top: 110px;
+    padding-bottom: 140px;
+    text-align: center;
+    background: linear-gradient(to right, #ff8c00, #e55e00);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn {
+    background: #fff;
+    color: #ff8c00;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* SECTIONS GERAIS */
+section {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #e55e00;
+}
+
+/* SOBRE */
+.about-section {
+    background: #fff;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* PROJETOS */
+.project-section {
+    background: #f9f9f9;
+}
+
+.project-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    flex: 0 0 auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: none;
+    border-radius: 0;
+}
+
+.project-card img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 500px;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.project-card img:hover {
+    transform: scale(1.05);
+}
+
+/* AVALIAÇÕES */
+.review-section {
+    background: #fff;
+}
+
+.review {
+    background: #fff;
+    padding: 20px;
+    border-left: 5px solid #ff8c00;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.stars {
+    color: #ff8c00;
+}
+
+/* ENDEREÇO */
+.address-section {
+    background: #f9f9f9;
+}
+
+.address-section p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.map {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* CONTATO / WHATSAPP */
+.contact-section {
+    background: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    animation: pulse 1.6s infinite;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .project-card img {
+    max-width: 100%;
+    height: auto;
+  }
+}
