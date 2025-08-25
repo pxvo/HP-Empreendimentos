@@ -249,19 +249,21 @@ h2 {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #25d366;
-  color: white;
-  font-size: 24px;
-  padding: 14px;
+  width: 60px;   /* tamanho do botão */
+  height: 60px;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
   z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366; /* fundo verde */
   animation: pulse 1.6s infinite;
 }
 
-.floating-whatsapp:hover {
-  background: #1ebe57;
+.floating-whatsapp img {
+  width: 32px;
+  height: 32px;
 }
 
 /* FOOTER */
@@ -404,3 +406,4 @@ footer p {
     box-shadow: 0 0 0 0 rgba(255, 140, 0, 0);
   }
 }
+
