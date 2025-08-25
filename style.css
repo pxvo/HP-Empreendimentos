@@ -14,6 +14,10 @@ body {
   color: #333;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* HEADER */
 .header {
   background: #fff;
@@ -64,8 +68,10 @@ body {
   transition: color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a.active {
   color: #ff8c00;
+  font-weight: 700;
 }
 
 /* HERO */
@@ -160,6 +166,7 @@ h2 {
   max-height: 500px;
   transition: transform 0.3s ease;
   border-radius: 8px;
+  loading: lazy;
 }
 
 .project-card img:hover {
@@ -237,6 +244,45 @@ h2 {
   }
 }
 
+/* BOTÃO WHATSAPP FLUTUANTE */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  font-size: 24px;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  z-index: 9999;
+  animation: pulse 1.6s infinite;
+}
+
+.floating-whatsapp:hover {
+  background: #1ebe57;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px 20px;
+  margin-top: 80px;
+}
+
+footer .footer-logo img {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -284,4 +330,54 @@ h2 {
     max-width: 100%;
     height: auto;
   }
+
+  footer {
+    padding: 30px 10px;
+  }
+}
+
+/* FORMULÁRIO DE CONTATO */
+#whatsapp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+#whatsapp-form input,
+#whatsapp-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+#whatsapp-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#whatsapp-form button {
+  cursor: pointer;
+  border: none;
+}
+
+.cotacao-modal {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+}
+.cotacao-container {
+  background: #fff; padding: 20px;
+  border-radius: 10px; width: 100%; max-width: 400px;
+}
+.chat-messages { max-height: 300px; overflow-y: auto; margin-bottom: 10px; }
+.chat-input-area { display: flex; gap: 8px; }
+.chat-input-area input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+.chat-input-area button, .whatsapp-btn {
+  background: #25d366; color: #fff; border: none;
+  padding: 8px 12px; border-radius: 6px; cursor: pointer;
 }

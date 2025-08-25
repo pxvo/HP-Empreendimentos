@@ -52,13 +52,13 @@
       <h2>Projetos Realizados</h2>
       <div class="project-gallery">
         <div class="project-card">
-          <img src="img/projeto1.jpg" alt="Projeto 1">
+          <img src="img/projeto1.jpg" alt="Projeto 1" loading="lazy">
         </div>
         <div class="project-card">
-          <img src="img/projeto2.jpg" alt="Projeto 2">
+          <img src="img/projeto2.jpg" alt="Projeto 2" loading="lazy">
         </div>
         <div class="project-card">
-          <img src="img/projeto3.jpg" alt="Projeto 3">
+          <img src="img/projeto3.jpg" alt="Projeto 3" loading="lazy">
         </div>
       </div>
     </div>
@@ -68,15 +68,13 @@
     <div class="container">
       <h2>O que dizem nossos clientes</h2>
       <div class="review">
-        <p><strong>Agostinho Pereira</strong> - <span class="stars">★★★★★</span><br>Empresa séria, competente e
-          eficiente!</p>
+        <p><strong>Agostinho Pereira</strong> - <span class="stars">★★★★★</span><br>Empresa séria, competente e eficiente!</p>
       </div>
       <div class="review">
         <p><strong>Leonardo Nascimento</strong> - <span class="stars">★★★★★</span><br>Empresa de confiança.</p>
       </div>
       <div class="review">
-        <p><strong>Mariana Costa</strong> - <span class="stars">★★★★★</span><br>Excelente atendimento e qualidade
-          exemplar!</p>
+        <p><strong>Mariana Costa</strong> - <span class="stars">★★★★★</span><br>Excelente atendimento e qualidade exemplar!</p>
       </div>
     </div>
   </section>
@@ -94,19 +92,40 @@
     </div>
   </section>
 
-  <section id="contato" class="contact-section" data-aos="fade-up">
-    <div class="container" style="text-align: center;">
-      <h2>Fale com a gente</h2>
-      <p>Entre em contato para mais informações ou orçamentos personalizados.</p>
-      <a href="https://wa.me/5595984243642" target="_blank" class="whatsapp-btn">
-        Conversar pelo WhatsApp
-      </a>
+<section id="contato" class="contact-section" data-aos="fade-up">
+  <div class="container" style="text-align: center;">
+    <h2>Fale com a gente</h2>
+    <p>Preencha o formulário abaixo e fale direto com a nossa equipe pelo WhatsApp.</p>
+
+    <form id="whatsapp-form">
+      <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+      <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone" required>
+      <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
+      <button type="submit" class="whatsapp-btn">Enviar para o WhatsApp</button>
+      <button onclick="CotacaoSystem.iniciar()" class="botao-cotacao">
+  <i data-lucide="message-circle" style="width: 20px; height: 20px; margin-right: 8px;"></i>
+  SIMULAR ORÇAMENTO
+</button>
+
+    </form>
+  </div>
+</section>
+
+
+  <a href="https://wa.me/5595984243642" class="floating-whatsapp" target="_blank" title="Fale conosco pelo WhatsApp">
+    📱
+  </a>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="HP Logo" />
     </div>
-  </section>
+    <p>&copy; 2025 HP Empreendimentos. Todos os direitos reservados.</p>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
-  <script src="scripts.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 
 </html>
