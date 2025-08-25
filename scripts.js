@@ -1,22 +1,21 @@
 const CotacaoSystem = {
   config: {
     steps: 3,
-    whatsAppNumber: "5595984243642" // Seu número
+    whatsAppNumber: "5595984243642" // seu número
   },
-  state: {
-    currentStep: 0,
-    data: { nome: "", telefone: "", mensagem: "" }
-  },
+  state: { currentStep: 0, data: { nome: "", telefone: "", mensagem: "" } },
+
   iniciar() {
     this.createModal();
     this.showStep();
   },
+
   createModal() {
     const modal = `
       <div id="cotacaoModal" class="cotacao-modal">
         <div class="cotacao-container">
           <div class="cotacao-header">
-            <h3>Atendimento HP Empreendimentos</h3>
+            <h3>Assistente HP Empreendimentos</h3>
             <button onclick="CotacaoSystem.closeModal()">X</button>
           </div>
           <div class="chat-messages"></div>
@@ -25,14 +24,16 @@ const CotacaoSystem = {
       </div>`;
     document.body.insertAdjacentHTML("beforeend", modal);
   },
+
   showStep() {
     const steps = [
       () => this.askInput("nome", "Olá! Para começar, qual é o seu nome?"),
-      () => this.askInput("telefone", "Perfeito, agora me diga seu telefone para contato:"),
-      () => this.askInput("mensagem", "Por fim, descreva o tipo de imóvel/orçamento que procura:")
+      () => this.askInput("telefone", "Perfeito, agora me diga seu telefone:"),
+      () => this.askInput("mensagem", "Por fim, qual imóvel/orçamento você procura?")
     ];
     steps[this.state.currentStep]();
   },
+
   askInput(field, question) {
     document.querySelector(".chat-messages").innerHTML += `<p><b>HP:</b> ${question}</p>`;
     document.querySelector(".chat-input-area").innerHTML = `
@@ -40,6 +41,7 @@ const CotacaoSystem = {
       <button onclick="CotacaoSystem.saveAnswer('${field}')">Enviar</button>
     `;
   },
+
   saveAnswer(field) {
     const value = document.getElementById("chatInput").value.trim();
     if (!value) return;
@@ -52,14 +54,16 @@ const CotacaoSystem = {
       this.finish();
     }
   },
+
   finish() {
     const { nome, telefone, mensagem } = this.state.data;
-    const texto = `Olá, sou ${nome}.%0ATelefone: ${telefone}%0AImóvel/Orçamento: ${mensagem}`;
+    const texto = `Olá, meu nome é ${nome}.%0ATelefone: ${telefone}%0AImóvel/Orçamento: ${mensagem}`;
     const url = `https://wa.me/${this.config.whatsAppNumber}?text=${texto}`;
     document.querySelector(".chat-input-area").innerHTML = `
       <a href="${url}" target="_blank" class="whatsapp-btn">Enviar para WhatsApp</a>
     `;
   },
+
   closeModal() {
     document.getElementById("cotacaoModal").remove();
     this.state = { currentStep: 0, data: { nome: "", telefone: "", mensagem: "" } };
