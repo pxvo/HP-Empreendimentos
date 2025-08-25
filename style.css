@@ -364,6 +364,12 @@ footer p {
 }
 
 /* BOTÃO SIMULAR ORÇAMENTO */
+.botao-cotacao .icon-casa {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+
 .botao-cotacao {
   display: inline-flex;
   align-items: center;
