@@ -166,7 +166,6 @@ h2 {
   max-height: 500px;
   transition: transform 0.3s ease;
   border-radius: 8px;
-  loading: lazy;
 }
 
 .project-card img:hover {
